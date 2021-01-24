@@ -1,0 +1,20 @@
+{
+  "name": "demo-fastify-esm",
+  "version": "1.0.0",
+  "description": "Demonstrate ESM module loading from non-ESM server code using dynamic import",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jurgen Leschner",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^3.10.1",
+    "shortscale-v1": "npm:shortscale@^1.1.0",
+    "shortscale-v3": "npm:shortscale@^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jldec/demo-fastify-esm"
+  }
+}
