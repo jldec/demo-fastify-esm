@@ -2,13 +2,9 @@
 
 Minimal fastify server to demonstrate async module loading using [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports).
 
-The [shortscale](https://github.com/jldec/shortscale) module was originally published using CommonJS for v1.
+The [shortscale](https://github.com/jldec/shortscale) module was originally published using CommonJS for v1. Since v2, the module is available only as an ESM module. This means that it can no longer be loaded using Node.js `require()`.
 
-Since v2, the module is available only as an ESM module. This means that it can no longer be loaded using Node.js require().
-
-By leveraging [fastify.register](https://www.fastify.io/docs/latest/Plugins), it is easy to load a mix of CJS or ESM modules using dynamic `import()`.
-
-The code below does this for both the CJS and ESM versions of shortscale. Aliases for the different versions are declared in package.json.
+The code below loads both CJS and the ESM versions. Aliases for each are declared in package.json.
 
 ```js
 fastify.register(async (fastify) => {
