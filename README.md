@@ -10,23 +10,24 @@ The server.js code below loads both CJS and the ESM versions. Aliases for each a
 // minimal fastify server based on:
 // https://www.fastify.io/docs/latest/Getting-Started/#your-first-server
 
-// Require the framework and instantiate it
-const fastify = require('fastify')({
-  logger: true
-});
+const fastify = require('fastify')({ logger: true });
 
 fastify.register(async (fastify) => {
   let shortscale_v1 = require('shortscale-v1');
-  let shortscale_v3 = (await import('shortscale-v3')).default;
+  let shortscale_v4 = (await import('shortscale-v4')).default;
 
+  // e.g. http://localhost:3000/shortscale-v1?n=47
   fastify.get('/shortscale-v1', function (req, res) {
-    let n = Number(req.query.n);
-    res.send(`${n} in words (v1): ${shortscale_v1(n)}\n`);
+    let num = Number(req.query.n);
+    let str = '' + shortscale_v1(num);
+    res.send({num, str});
   });
 
-  fastify.get('/shortscale-v3', function (req, res) {
-    let n = Number(req.query.n);
-    res.send(`${n} in words (v3): ${shortscale_v3(n)}\n`);
+  // e.g. http://localhost:3000/shortscale-v4?n=47
+  fastify.get('/shortscale-v4', function (req, res) {
+    let num = Number(req.query.n);
+    let str = '' + shortscale_v4(num);
+    res.send({num, str});
   });
 });
 
