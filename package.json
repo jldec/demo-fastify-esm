@@ -2,7 +2,7 @@
   "name": "demo-fastify-esm",
   "version": "1.0.0",
   "description": "Demonstrate ESM module loading from non-ESM server code using dynamic import",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
