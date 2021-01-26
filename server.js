@@ -7,7 +7,7 @@ const fastify = require('fastify')({
 });
 
 fastify.register(async (fastify) => {
-  let shortscale_v1 = (await import('shortscale-v1')).default;
+  let shortscale_v1 = require('shortscale-v1');
   let shortscale_v3 = (await import('shortscale-v3')).default;
 
   fastify.get('/shortscale-v1', function (req, res) {
