@@ -9,9 +9,9 @@
   "author": "Jurgen Leschner",
   "license": "MIT",
   "dependencies": {
-    "fastify": "^3.11.0",
+    "fastify": "^3.12.0",
     "shortscale-v1": "npm:shortscale@^1.1.0",
-    "shortscale-v4": "npm:shortscale@^4.0.0"
+    "shortscale-v4": "npm:shortscale@^4.1.0"
   },
   "repository": {
     "type": "git",
